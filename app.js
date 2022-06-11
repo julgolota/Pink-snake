@@ -36,7 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
       (currentSnake[0] - width < 0 && direction === -width) ||
       squares[currentSnake[0] + direction].classList.contains("snake")
     ) {
-      return clearInterval(interval);
+      alert("GAME OVER");
+
+      if (alert) {
+        return clearInterval(interval);
+      }
     }
 
     const tail = currentSnake.pop();
@@ -63,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } while (squares[appleIndex].classList.contains("snake"));
     squares[appleIndex].classList.add("apple");
   }
+
+  //if () {alert("GAME OVER");}
 
   function control(e) {
     squares[currentIndex].classList.remove("snake");
